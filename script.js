@@ -59,6 +59,7 @@ function limpaQuadro() {
 
 const boardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
+const buttonGenerateNewColor = document.getElementById('generate-new-color');
 const pixelBoard = document.getElementById('pixel-board');
 const removeLinhas = document.getElementsByClassName('linha');
 let linha;
@@ -95,6 +96,13 @@ function numberRGB() {
   const number = Math.floor(Math.random() * 255);
   return number;
 }
+
+buttonGenerateNewColor.addEventListener('click', () => {
+  for (let index = 1; index < paleta.length; index += 1) {
+    paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
+  }
+});
+
 window.onload = function () {
   for (let index = 1; index < paleta.length; index += 1) {
     paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
