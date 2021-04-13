@@ -64,12 +64,6 @@ const pixelBoard = document.getElementById('pixel-board');
 const removeLinhas = document.getElementsByClassName('linha');
 let linha;
 
-buttonGenerateNewColor.addEventListener('click', () => {
-  for (let index = 1; index < paleta.length; index += 1) {
-    paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
-  }
-});
-
 buttonGenerateBoard.addEventListener('click', function () {
   if (boardSize.value === '') {
     alert('Board inválido!');
@@ -102,6 +96,13 @@ function numberRGB() {
   const number = Math.floor(Math.random() * 255);
   return number;
 }
+
+buttonGenerateNewColor.addEventListener('click', () => {
+  for (let index = 1; index < paleta.length; index += 1) {
+    paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
+  }
+});
+
 window.onload = function () {
   for (let index = 1; index < paleta.length; index += 1) {
     paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
