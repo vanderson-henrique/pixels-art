@@ -97,7 +97,7 @@ function numberRGB() {
   return number;
 }
 
-buttonGenerateNewColor.addEventListener('click', () => {
+buttonGenerateNewColor.addEventListener('click', function() {
   for (let index = 1; index < paleta.length; index += 1) {
     paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
   }
